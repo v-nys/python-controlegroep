@@ -5,4 +5,4 @@
 "een newline schrijf je als \\n"
 "een backslash schrijf je als \\\\"
 niet waar
-waar
+niet waar
