@@ -1,1 +1,1 @@
-Dit is niet wat gevraagd is.
+print("hello, world!")
