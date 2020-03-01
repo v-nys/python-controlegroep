@@ -4,8 +4,8 @@ byte3 = 9
 byte4 = 0
 
 if byte1 < 0 or byte1 > 255 or byte2 < 0 or byte2 > 255 or byte3 < 0 or byte3 > 255 or byte4 < 0 or byte4 > 0:
-    print("de vier bytes vormen geen geldig IPv4-adres")
-elif byte1 == 10:
-    print("de vier bytes vormen een IPv4-adres in het bereik 10.0.0.0/8")
+    print("byte 1 tot byte 4 stellen samen geen geldig IP-adres voor")
+elif byte1 == 10 or (byte1 == 172 and byte2 >= 16 and byte2 <= 31) or (byte1 == 192 and byte2 == 168):
+    print("byte 1 tot byte 4 stellen samen een geldig IP-adres in het privébereik voor")
 else:
-    print("de vier bytes vormen een IPv4-adres buiten het bereik 10.0.0.0/8")
+    print("byte 1 tot byte 4 stellen samen een geldig IP-adres in het publieke bereik voor")
