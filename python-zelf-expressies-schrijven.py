@@ -1,1 +1,4 @@
-"test; deze oefening moet met de hand nagekeken worden!"
+4*2 + 9
+(4 + 2) + 9
+7 / (3 / 2)
+"hello" + " " + "world"
