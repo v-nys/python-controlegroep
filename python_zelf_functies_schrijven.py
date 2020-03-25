@@ -1,2 +1,2 @@
 def is_byte(number):
-    return number >= 100 and number <= 255
+    return number >= 0 and number <= 255
