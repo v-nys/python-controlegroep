@@ -1,7 +1,1 @@
-
-
-
 print("hello, world!")
-
-
-

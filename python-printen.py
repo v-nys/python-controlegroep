@@ -1,5 +1,3 @@
-
-
 print("hallo!")
 print(3)
 print(99.99)
