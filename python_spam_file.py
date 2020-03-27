@@ -1,6 +1,6 @@
 import python_spam_regel_functie
 
-def file_is_spam:
+def file_is_spam():
     answer = input("Welke file moet gecontroleerd worden?\n")
     path = answer.split(" ")
     with open(answer) as fh:
