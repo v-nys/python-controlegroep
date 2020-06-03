@@ -157,47 +157,46 @@ def prefix_length_to_max_hosts(aantal_1_bits):
     aantal_host = 2** (32 - aantal_1_bits) - 2
     return aantal_host
     
-
-
-# ++++++++++++++++++++++
-# ++++++++++++++++++++++
-
-#1+2
-##IPv4-hostadres opvragen
-##subnetmasker opvragen
-host_address = ask_for_number_sequence("Wat is het IP-adres?\n")
-subnet_mask = ask_for_number_sequence("Wat is het subnetmasker?\n")
-
-#3
-##ip-adres geldigheid controleren
-##subnetmasker geldigheid controleren
-is_valid_ip_address(host_address)
-is_valid_netmask(subnet_mask)
-if len(subnet_mask) ==4:
-    print("IP-adres en subnetmasker zijn geldig.")
+if __name__ == '__main__':
+    # ++++++++++++++++++++++
+    # ++++++++++++++++++++++
     
-#4
-#aantal 1-bits tellen
-aantal_1_bits = one_bits_in_netmask(subnet_mask)
-print("De lengte van het subnetmasker is " + str(aantal_1_bits) + ".")
-
-#5
-#adres van het subnet berekenen
-netwerk_address = apply_network_mask(host_address,subnet_mask)
-print("Het adres van het subnet is " + ('.'.join([str(i) for i in (netwerk_address)])) +".")
-
-#6
-#wildcardmasker berekenen
-wildcard_mask = netmask_to_wilcard_mask(subnet_mask)
-print("Het wildcardmasker is " + ('.'.join([str(i) for i in (wildcard_mask)]))+".")
-
-#7
-#broadcastadres berekenen
-broadcast_address= get_broadcast_address(netwerk_address,wildcard_mask)
-print("Het broadcastadres is " + ('.'.join([str(i) for i in (broadcast_address)]))+".")
-
-#8
-#maximaal aantal hosts berekenen
-max_anntalhosts = prefix_length_to_max_hosts(aantal_1_bits)
-print("Het maximaal aantal hosts op dit subnet is " + (str(max_anntalhosts))+".")
-
+    #1+2
+    ##IPv4-hostadres opvragen
+    ##subnetmasker opvragen
+    host_address = ask_for_number_sequence("Wat is het IP-adres?\n")
+    subnet_mask = ask_for_number_sequence("Wat is het subnetmasker?\n")
+    
+    #3
+    ##ip-adres geldigheid controleren
+    ##subnetmasker geldigheid controleren
+    is_valid_ip_address(host_address)
+    is_valid_netmask(subnet_mask)
+    if len(subnet_mask) ==4:
+        print("IP-adres en subnetmasker zijn geldig.")
+        
+    #4
+    #aantal 1-bits tellen
+    aantal_1_bits = one_bits_in_netmask(subnet_mask)
+    print("De lengte van het subnetmasker is " + str(aantal_1_bits) + ".")
+    
+    #5
+    #adres van het subnet berekenen
+    netwerk_address = apply_network_mask(host_address,subnet_mask)
+    print("Het adres van het subnet is " + ('.'.join([str(i) for i in (netwerk_address)])) +".")
+    
+    #6
+    #wildcardmasker berekenen
+    wildcard_mask = netmask_to_wilcard_mask(subnet_mask)
+    print("Het wildcardmasker is " + ('.'.join([str(i) for i in (wildcard_mask)]))+".")
+    
+    #7
+    #broadcastadres berekenen
+    broadcast_address= get_broadcast_address(netwerk_address,wildcard_mask)
+    print("Het broadcastadres is " + ('.'.join([str(i) for i in (broadcast_address)]))+".")
+    
+    #8
+    #maximaal aantal hosts berekenen
+    max_anntalhosts = prefix_length_to_max_hosts(aantal_1_bits)
+    print("Het maximaal aantal hosts op dit subnet is " + (str(max_anntalhosts))+".")
+    
